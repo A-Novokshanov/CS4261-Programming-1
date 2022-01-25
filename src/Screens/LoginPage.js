@@ -8,7 +8,6 @@ import styles from '../Style/Styles.styles';
 export default class LoginPage extends React.Component {
 
     async submitLogin(email, password) {
-        console.log(email + " HELLO " + password)
         const auth = getAuth();
 
         await signInWithEmailAndPassword(auth, email, password)
@@ -28,7 +27,7 @@ export default class LoginPage extends React.Component {
                 password: '',
                 error: '2'
                 }}
-                onSubmit = {values => this.submitLogin(values.email, values.password).catch(error => console.log("hehe " + error.message)/*setFieldValue('error', error.message)*/)}
+                onSubmit = {values => this.submitLogin(values.email, values.password).catch(error => console.log(error.message)/*setFieldValue('error', error.message)*/)}
             >
                 {({handleChange, handleBlur, handleSubmit, values}) => (
                 <View style={styles.container}>

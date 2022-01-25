@@ -7,12 +7,6 @@ import styles from '../Style/Styles.styles';
 
 export default class ContentPage extends React.Component {
 
-    async submitLogin(email, password) {
-        console.log(email + " HELLO " + password)
-        const auth = getAuth();
-
-        await signInWithEmailAndPassword(auth, email, password)
-    }
     render() {
         return (
             <View style={styles.app}>
